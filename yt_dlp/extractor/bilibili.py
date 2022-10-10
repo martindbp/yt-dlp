@@ -441,12 +441,27 @@ class BiliBiliIE(InfoExtractor):
 
 
 class BiliBiliBangumiIE(InfoExtractor):
-    _VALID_URL = r'https?://bangumi\.bilibili\.com/anime/(?P<id>\d+)'
+    _VALID_URL = r'(https:\/\/www\.bilibili\.com\/bangumi\/play\/ep|https?://bangumi\.bilibili\.com/anime/)(?P<id>\d+)'
 
     IE_NAME = 'bangumi.bilibili.com'
     IE_DESC = 'BiliBili番剧'
 
     _TESTS = [{
+        'url': 'https://www.bilibili.com/bangumi/play/ep94094',
+        'info_dict': {
+            'id': '94094_part1',
+            'ext': 'm4s',
+            'title': '降世神通：最后的气宗 第一季：第1话',
+            'uploader': '哔哩哔哩番剧',
+            'cid': '0',
+            'duration': 1415.528,
+            'timestamp': 1469664000,
+            'thumbnail': 'https://i0.hdslb.com/bfs/archive/25cfeb93d8baaf0033991b4bb892d2c50732a31d.png',
+            'upload_date': '20160728',
+            'description': 'md5:d0e7acd18961826394e292268c04f16c',
+            'tags': [],
+        },
+    }, {
         'url': 'http://bangumi.bilibili.com/anime/1869',
         'info_dict': {
             'id': '1869',
